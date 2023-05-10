@@ -32,4 +32,12 @@ describe('Remove Nth Node From End of List', () => {
 
         expect(removeNthFromEnd(head, n)).toEqual(expected);
     });
+
+    test('should return [2] when given [1,2] and n=2', () => {
+        const head = new ListNode(1, new ListNode(2));
+        const n = 2;
+        const expected = new ListNode(2);
+
+        expect(removeNthFromEnd(head, n)).toEqual(expected);
+    });
 });

@@ -13,11 +13,34 @@ export default function removeNthFromEnd(
     head: ListNode | null,
     n: number
 ): ListNode | null {
-    let result = head;
+    if (head === null) {
+        return null;
+    }
+    let amount = 0;
+    let prev: ListNode | null = null;
+    let curr: ListNode | null = head;
 
-    result = new ListNode(n, head);
+    while (curr) {
+        curr = curr.next;
+        amount++;
+    }
 
-    return result;
+    amount -= n;
+    curr = head;
+
+    while (amount > 0) {
+        prev = curr;
+        curr = curr!.next;
+        amount--;
+    }
+
+    if (curr === head) {
+        head = head.next || null;
+    } else if (!curr?.next) {
+        prev!.next = null;
+    } else {
+        prev!.next = curr.next;
+    }
+
+    return head;
 }
-
-// https://leetcode.com/problems/remove-nth-node-from-end-of-list/
