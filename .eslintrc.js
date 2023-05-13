@@ -57,6 +57,7 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-use-before-define': 'off',
         'prefer-exponentiation-operator': 'off',
-        'no-restricted-properties': 'off'
+        'no-restricted-properties': 'off',
+        'prefer-destructuring': 'off'
     }
 };
