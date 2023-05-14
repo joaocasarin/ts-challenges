@@ -1,5 +1,7 @@
 export default function removeDuplicates(nums: number[]): number {
-    if (!nums.length || nums.length === 1) return 0;
+    if (!nums.length) return 0;
+
+    if (nums.length === 1) return 1;
 
     let count = 1;
 
